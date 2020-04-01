@@ -20,12 +20,12 @@ class Post extends Model
     }
 
     function comments(){
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->with(['user', 'replies'])->orderBy('created_at', 'desc');
     }
 
     function likes(){
 
-        return $this->hasMany(Like::class);
+        return $this->hasMany(Like::class)->with('user')->orderBy('created_at', 'desc');
     }
 
     protected function serializeDate(DateTimeInterface $date)
