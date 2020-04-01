@@ -32,4 +32,3 @@ Route::post('allComment', 'CommentController@allComment')->name('allComment');
 Route::post('allLike', 'LikeController@allLike')->name('allLike');
 Route::post('allReply', 'ReplyController@allReply')->name('allReply');
 
-Route::post('time', 'PostController@transfer');
